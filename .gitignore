@@ -1,0 +1,25 @@
+# Python virtual environments
+.venv/
+venv/
+ryu39-env/
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local diagnostic results
+*.csv
+results/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Editor files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
