@@ -81,7 +81,7 @@ def handler_for(net):
 def main():
     if os.geteuid()!=0: raise SystemExit("Run with: sudo python3 topology.py")
     setLogLevel("info")
-    net=Mininet(topo=DiagnosticTopo(),controller=None,switch=OVSKernelSwitch,link=TCLink,autoSetMacs=True,build=False)
+    net=Mininet(topo=DiagnosticTopo(),controller=None,switch=OVSKernelSwitch,link=TCLink,autoSetMacs=True,build=False)#Checks whether the script is running as root because Mininet requires elevated privileges.
     net.addController("c0",controller=RemoteController,ip="127.0.0.1",port=6653)
     net.build(); net.start()
     server=ThreadingHTTPServer(("127.0.0.1",8765),handler_for(net))
